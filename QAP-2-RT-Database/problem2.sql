@@ -79,3 +79,16 @@ SELECT o.id AS order_id, o.order_date
 FROM orders o
 JOIN customers c ON o.customer_id = c.id
 WHERE c.id = 1;  -- Replace 1 with the customer ID
+
+-- Update Data
+UPDATE products
+SET stock_quantity = stock_quantity - (SELECT quantity FROM order_items WHERE product_id = products.id AND order_id = 1)
+WHERE id IN (SELECT product_id FROM order_items WHERE order_id = 1);
+
+-- Delete Data
+DELETE FROM order_items
+WHERE order_id = 1;
+
+DELETE FROM orders
+WHERE id = 1;
+

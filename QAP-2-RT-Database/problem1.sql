@@ -33,3 +33,31 @@ CREATE TABLE enrollments (
     FOREIGN KEY (student_id) REFERENCES students(id),
     FOREIGN KEY (course_id) REFERENCES courses(id)
 );
+-- Insert students
+INSERT INTO students (first_name, last_name, email, school_enrollment_date)
+VALUES ('John', 'Doe', 'john.doe@example.com', '2020-09-01'),
+       ('Jane', 'Smith', 'jane.smith@example.com', '2020-09-01'),
+       ('Robert', 'Brown', 'robert.brown@example.com', '2019-09-01'),
+       ('Emily', 'Clark', 'emily.clark@example.com', '2021-09-01'),
+       ('Michael', 'Johnson', 'michael.johnson@example.com', '2021-09-01');
+
+-- Insert professors
+INSERT INTO professors (first_name, last_name, department)
+VALUES ('Alice', 'Cooper', 'Physics'),
+       ('Bob', 'Marley', 'Mathematics'),
+       ('Charlie', 'Parker', 'Computer Science'),
+       ('David', 'Bowie', 'Biology');
+
+-- Insert courses
+INSERT INTO courses (course_name, course_description, professor_id)
+VALUES ('Physics 101', 'Introduction to Physics', 1),
+       ('Calculus 101', 'Introduction to Calculus', 2),
+       ('CS 101', 'Introduction to Computer Science', 3);
+
+-- Insert enrollments
+INSERT INTO enrollments (student_id, course_id, enrollment_date)
+VALUES (1, 1, '2021-09-15'),
+       (2, 1, '2021-09-15'),
+       (3, 2, '2021-09-16'),
+       (4, 3, '2021-09-17'),
+       (5, 1, '2021-09-18');

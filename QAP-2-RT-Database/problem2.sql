@@ -61,3 +61,9 @@ VALUES (1, 1, 1), (1, 2, 2), -- Order 1
        (3, 5, 1), (3, 1, 1), -- Order 3
        (4, 2, 1), (4, 3, 1), -- Order 4
        (5, 4, 2), (5, 5, 1); -- Order 5
+
+--SQL Queries
+
+-- Retrieve names and stock quantities of all products
+SELECT product_name, stock_quantity
+FROM products;

@@ -83,3 +83,7 @@ JOIN enrollments e ON c.id = e.course_id;
 UPDATE students
 SET email = 'ryantibbo73@hotmail.com'
 WHERE id = 1;  -- Assuming student with ID 1
+
+-- Delete Data
+DELETE FROM enrollments
+WHERE student_id = 1 AND course_id = 1;

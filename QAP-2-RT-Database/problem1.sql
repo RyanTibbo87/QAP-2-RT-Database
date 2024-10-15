@@ -35,11 +35,11 @@ CREATE TABLE enrollments (
 );
 -- Insert students
 INSERT INTO students (first_name, last_name, email, school_enrollment_date)
-VALUES ('John', 'Doe', 'john.doe@example.com', '2020-09-01'),
-       ('Jane', 'Smith', 'jane.smith@example.com', '2020-09-01'),
-       ('Robert', 'Brown', 'robert.brown@example.com', '2019-09-01'),
-       ('Emily', 'Clark', 'emily.clark@example.com', '2021-09-01'),
-       ('Michael', 'Johnson', 'michael.johnson@example.com', '2021-09-01');
+VALUES ('Ryan', 'Tibbo', 'ryan.tibbo@keyin.com', '2020-09-01'),
+       ('Jane', 'Smith', 'jane.smith@keyin.com', '2020-09-01'),
+       ('Robert', 'Brown', 'robert.brown@keyin.com', '2019-09-01'),
+       ('Emily', 'Clark', 'emily.clark@keyin.com', '2021-09-01'),
+       ('Michael', 'Johnson', 'michael.johnson@keyin.com', '2021-09-01');
 
 -- Insert professors
 INSERT INTO professors (first_name, last_name, department)
@@ -61,3 +61,10 @@ VALUES (1, 1, '2021-09-15'),
        (3, 2, '2021-09-16'),
        (4, 3, '2021-09-17'),
        (5, 1, '2021-09-18');
+
+-- Retrieve Full Names of Students in Physics 101
+SELECT CONCAT(s.first_name, ' ', s.last_name) AS full_name
+FROM students s
+JOIN enrollments e ON s.id = e.student_id
+JOIN courses c ON e.course_id = c.id
+WHERE c.course_name = 'Physics 101';

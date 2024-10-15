@@ -41,7 +41,7 @@ VALUES ('Ryan', 'Tibbo', 'ryan.tibbo@keyin.com', '2020-09-01'),
        ('Emily', 'Clark', 'emily.clark@keyin.com', '2021-09-01'),
        ('Michael', 'Johnson', 'michael.johnson@keyin.com', '2021-09-01');
 
--- Insert professors
+-- Insert professors (singers/rockstars)
 INSERT INTO professors (first_name, last_name, department)
 VALUES ('Alice', 'Cooper', 'Physics'),
        ('Bob', 'Marley', 'Mathematics'),
@@ -68,3 +68,8 @@ FROM students s
 JOIN enrollments e ON s.id = e.student_id
 JOIN courses c ON e.course_id = c.id
 WHERE c.course_name = 'Physics 101';
+
+-- List of Courses and Professors' Full Names
+SELECT c.course_name, CONCAT(p.first_name, ' ', p.last_name) AS professor_name
+FROM courses c
+JOIN professors p ON c.professor_id = p.id;

@@ -73,3 +73,8 @@ WHERE c.course_name = 'Physics 101';
 SELECT c.course_name, CONCAT(p.first_name, ' ', p.last_name) AS professor_name
 FROM courses c
 JOIN professors p ON c.professor_id = p.id;
+
+-- Retrieve All Courses with Enrollments
+SELECT DISTINCT c.course_name
+FROM courses c
+JOIN enrollments e ON c.id = e.course_id;

@@ -67,3 +67,9 @@ VALUES (1, 1, 1), (1, 2, 2), -- Order 1
 -- Retrieve names and stock quantities of all products
 SELECT product_name, stock_quantity
 FROM products;
+
+-- Retrieve product names and quantities for specific order
+SELECT p.product_name, oi.quantity
+FROM order_items oi
+JOIN products p ON oi.product_id = p.id
+WHERE oi.order_id = 1;  -- Replace 1 with the order ID you want to query

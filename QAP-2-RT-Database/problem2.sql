@@ -73,3 +73,9 @@ SELECT p.product_name, oi.quantity
 FROM order_items oi
 JOIN products p ON oi.product_id = p.id
 WHERE oi.order_id = 1;  -- Replace 1 with the order ID you want to query
+
+-- Retrieve all orders placed by specific customer
+SELECT o.id AS order_id, o.order_date
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+WHERE c.id = 1;  -- Replace 1 with the customer ID

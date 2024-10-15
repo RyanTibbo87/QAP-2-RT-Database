@@ -78,3 +78,8 @@ JOIN professors p ON c.professor_id = p.id;
 SELECT DISTINCT c.course_name
 FROM courses c
 JOIN enrollments e ON c.id = e.course_id;
+
+-- Update Student Email
+UPDATE students
+SET email = 'ryantibbo73@hotmail.com'
+WHERE id = 1;  -- Assuming student with ID 1
